@@ -1,7 +1,9 @@
-const getAllInvestors = async () => {
-  // const allInvestors = Investor.getAllInvestors()
+const InvestorModel = require('../models/investor')
 
-  return 'hola'
+const getAllInvestors = async () => {
+  const allInvestors = await InvestorModel.find()
+
+  return allInvestors
 }
 
 module.exports = {

@@ -17,6 +17,10 @@ const investorSchema = new mongoose.Schema({
     type: [String],
     required: true
   },
+  businessTarget: {
+    type: [String],
+    required: true
+  },
   country: {
     type: String,
     required: true
@@ -46,9 +50,21 @@ const investorSchema = new mongoose.Schema({
   website: {
     type: String,
     required: true
+  },
+  uid: {
+    type: String,
+    required: true
+  },
+  roundPhases: {
+    type: [String],
+    required: true
+  },
+  createdAt: {
+    type: Date,
+    required: true
   }
 })
 
-const InvestorModel = mongoose.model('Investor', investorSchema)
+const InvestorModel = mongoose.model('Investor', investorSchema, 'investment-entities')
 
 module.exports = InvestorModel
