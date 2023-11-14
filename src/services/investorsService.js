@@ -1,9 +1,7 @@
-const Investor = require('../database/Investor')
-
 const getAllInvestors = async () => {
-  const allInvestors = Investor.getAllInvestors()
+  // const allInvestors = Investor.getAllInvestors()
 
-  return allInvestors
+  return 'hola'
 }
 
 module.exports = {
