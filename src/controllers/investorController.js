@@ -1,9 +1,17 @@
 const investorService = require('../services/investorsService')
 
 const getAllInvestors = async (req, res) => {
-  const allInvestors = await investorService.getAllInvestors()
+  const { page } = req.query
 
-  res.status(200).json(allInvestors)
+  if (page) {
+    const paginatedInvestors = await investorService.getPaginatedInvestors(page)
+
+    return res.status(200).json(paginatedInvestors)
+  } else {
+    const allInvestors = await investorService.getAllInvestors()
+
+    return res.status(200).json(allInvestors)
+  }
 }
 
 module.exports = {
