@@ -1,5 +1,4 @@
-const Investor = require('../models/postgres/investor')
-const InvestorModel = require('../models/mongo/investor')
+const Investor = require('../models/investor')
 
 const getAllInvestors = async () => {
   const allInvestors = await Investor.findAll()
@@ -7,13 +6,13 @@ const getAllInvestors = async () => {
   return allInvestors
 }
 
-const getPaginatedInvestors = async (page) => {
-  const paginatedInvestors = await InvestorModel.find().skip((page - 1) * 10).limit(10)
+// const getPaginatedInvestors = async (page) => {
+//   const paginatedInvestors = await InvestorModel.find().skip((page - 1) * 10).limit(10)
 
-  return paginatedInvestors
-}
+//   return paginatedInvestors
+// }
 
 module.exports = {
-  getAllInvestors,
-  getPaginatedInvestors
+  getAllInvestors
+  // getPaginatedInvestors
 }
