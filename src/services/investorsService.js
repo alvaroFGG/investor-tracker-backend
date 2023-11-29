@@ -1,7 +1,8 @@
-const InvestorModel = require('../models/investor')
+const Investor = require('../models/postgres/investor')
+const InvestorModel = require('../models/mongo/investor')
 
 const getAllInvestors = async () => {
-  const allInvestors = await InvestorModel.find()
+  const allInvestors = await Investor.findAll()
 
   return allInvestors
 }
