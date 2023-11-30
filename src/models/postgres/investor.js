@@ -2,11 +2,10 @@ const { DataTypes } = require('sequelize')
 const sequelize = require('../../config/postgres')
 
 const Investor = sequelize.define('investors', {
-  id: {
-    type: DataTypes.INTEGER,
+  _id: {
+    type: DataTypes.STRING,
     primaryKey: true,
-    allowNull: false,
-    autoIncrement: true
+    allowNull: false
   },
   name: {
     type: DataTypes.STRING,
