@@ -6,13 +6,16 @@ const getAllInvestors = async () => {
   return allInvestors
 }
 
-// const getPaginatedInvestors = async (page) => {
-//   const paginatedInvestors = await InvestorModel.find().skip((page - 1) * 10).limit(10)
+const getPaginatedInvestors = async (page) => {
+  const allInvestors = await Investor.findAll({
+    offset: (page - 1) * 10,
+    limit: 10
+  })
 
-//   return paginatedInvestors
-// }
+  return allInvestors
+}
 
 module.exports = {
-  getAllInvestors
-  // getPaginatedInvestors
+  getAllInvestors,
+  getPaginatedInvestors
 }

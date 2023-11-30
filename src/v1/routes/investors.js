@@ -3,6 +3,6 @@ const router = express.Router()
 const investorController = require('../../controllers/investorController')
 
 router
-  .get('/investors', investorController.getAllInvestors)
+  .get('/investors', investorController.getInvestors)
 
 module.exports = router
